@@ -1,13 +1,13 @@
 var questionList = [
     'What is a document method Query Selector?',
-    'What is...?',
-    'What is...?',
-    'What is...?'
+    'What does a for function do?',
+    'What is a global object?',
+    'What does a math random function do?', 'What does .textContent do?'
   ];
   var answerListOne = ['Returns the first element within the document that matches the the specified selector(s).', 'Assigns a value to a variable','A sequence of characters used to represent text', 'Last value returned by event handler', 'Offer space distriution between items'];
   var answerListTwo = ['Returns the number of child elements of the document.', 'Composes a string of elements', 'Ojeect that exists in a global scope', 'Used to store various key collections', 'Represents text content of node'];
-  var answerListThree = ['A special variable which can hold more than one value.'];
-  var answerListFour = ['Allows you to break up your code into separate fields.', 'Creates a loop', 'Used to change the location of a current web page', ];
+  var answerListThree = ['A special variable which can hold more than one value.', 'Creates a loop', 'Used to change current web page', 'Manipulates the class list', 'Prevents further propogation of event'];
+  var answerListFour = ['Allows you to break up your code into separate fields.', 'Converts objects into a boolean', 'Matches an event handler to an element', 'Returns a random interger between specified values', 'Sets or returns elements display type'];
   var correctAnswers = ['.answer1', '.answer3', '.answer2', '.answer4', '.answer2'];
 
 
@@ -22,6 +22,8 @@ var three = document.querySelector('.answer3').textContent = answerListThree[que
 var four = document.querySelector('.answer4').textContent = answerListFour [questionNumber];
 var result = document.querySelector('.result');
 var answers = document.querySelector('.answers');
+
+
 
 question.textContent = questionList[questionNumber];
 one.textContent = document.querySelector('.answer1');
@@ -56,7 +58,7 @@ answers.addEventListener('click', event => {
     result.classList.add('show');
     result.textContent= 'That answer is incorrect';
   }
-navigate(1);
+
 if (questionNumber === 5) {
   global.removeChild(quiz);
   congrats.textContent = 'you won!';
@@ -65,7 +67,6 @@ if (questionNumber === 5) {
 
 });
 
-navigate(0);
 
 
 // //  Selects carousel element
