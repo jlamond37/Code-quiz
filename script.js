@@ -28,15 +28,13 @@ four.innerText = answerListFour [questionNumber];
 var result = document.querySelector('.result');
 var answers = document.querySelector('.answers');
 var timer = document.querySelector('.timer');
+var highscore = document.querySelector('.highscore');
 var timeLeft = 60;
 
 
-// question.textContent = questionList[questionNumber];
-// one.textContent = document.querySelector('.answer1');
-// two.textContent = document.querySelector('.answer2');
-// three.textContent = document.querySelector('.answer3');
-// four.textContent = document.querySelector('.answer4');
 timer.textContent = 'Timer: ' + timeLeft + ' seconds';
+highscore.textContent = 'View your Score';
+
 
 function setTime() {
   var timerInterval = setInterval(function() {
@@ -70,6 +68,7 @@ function proceedToNextQuestion () {
   four.innerText = answerListFour[questionNumber];
 };
 
+
 answers.addEventListener('click', event => {
   var element=event.target
   if (element.matches(correctAnswers[questionNumber])) {
@@ -79,12 +78,15 @@ answers.addEventListener('click', event => {
     result.classList.add('show');
     result.textContent = 'Correct!';
     event.stopPropagation();
+    localStorage.setItem('questionNumber', questionNumber);
     proceedToNextQuestion();
   } else {
     result.classList.remove('show');
     void result.offsetWidth;
     result.classList.add('show');
     result.textContent= 'That answer is incorrect';
+    event.stopPropagation();
+    proceedToNextQuestion();
   }
 if (questionNumber === 5) {
   global.removeChild(quiz);

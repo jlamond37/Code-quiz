@@ -2,17 +2,20 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
+.timer {
   font-size: 20px;
   text-align: right;
 }
 
-h2 {
-    font-size: 30px;
+.highscore {
+  font-size: 20px;
+  text-align: left;
+  margin-top: -20px;
 }
 
 .question {
     text-align: center;
+    font-size: 30px;
 }
 
 .container {
