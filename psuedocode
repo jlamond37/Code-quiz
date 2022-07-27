@@ -16,7 +16,7 @@ var images = [
 
 carousel.style.backgroundImage = "url('https://picsum.photos/300/200')";
 
-function navigate(direction) {
+function proceedToNextQuestion(direction) {
   index = index + direction;
   if (index < 0) { 
     index = images.length - 1; 
@@ -37,7 +37,7 @@ next.addEventListener("click", function(event) {
   // Stops event from bubbling up and new window opening
   event.stopPropagation();
 
-  navigate(1);
+  proceedToNextQuestion(1);
 });
 
 // Clicking previous displays previous image in carousel
@@ -45,7 +45,7 @@ prev.addEventListener("click", function(event) {
   // Event bubbling would occur and a new window would open if we did not include the following line of code.
   event.stopPropagation();
 
-  navigate(-1);
+  proceedToNextQuestion(-1);
 });
 
-navigate(0);
+proceedToNextQuestion(0);
